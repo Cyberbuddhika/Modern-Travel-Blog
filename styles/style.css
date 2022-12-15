@@ -1,0 +1,193 @@
+body {
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    font-size: 1rem;
+    background-image:
+        linear-gradient(45deg,
+            rgba(26, 20, 37, 0.5),
+            rgba(8, 8, 8, 0.5)), url('https://d1mlmvg7rxfynq.cloudfront.net/places/adam-vradenburg-GA09PKfRIQY-unsplash.jpg');
+    background-size: cover;
+}
+
+#main-body {
+    text-align: center;
+    margin: 0;
+    font-size: 08rem;
+    color: white;
+    padding-top: 6rem;
+}
+
+#main-h1 {
+    font-size: 08rem;
+}
+
+main li {
+    list-style: none;
+    font-size: 3rem;
+}
+
+main ul {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin: 0;
+    padding: 2rem;
+}
+
+main li:hover {
+    cursor: pointer;
+    /* text-decoration: underline; */
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#head-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    margin: 0;
+}
+
+.sub-image-1 {
+    position: relative;
+    width: 340px;
+    height: 460px;
+    border-radius: 36px;
+    overflow: hidden;
+}
+
+/* -- footer -- */
+
+.footer-note {
+    margin: 0;
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.footer-note p {
+    font-size: 0.6rem;
+    color: white;
+    text-align: center;
+}
+
+.footer-note a {
+    font-size: 0.6rem;
+    color: white;
+    text-align: center;
+}
+
+
+/* --- mobile hero --- */
+
+@media (max-width: 48rem) {
+    .sub-image {
+        display: none;
+    }
+
+    #main-h1 {
+        font-size: 04rem;
+    }
+
+    body {
+        min-height: 93vh;
+    }
+
+    #main-body {
+        text-align: center;
+        margin: 0;
+        padding-top: 10rem;
+    }
+
+    main li {
+        list-style: none;
+        font-size: 1rem;
+    }
+
+    main ul {
+        display: block;
+        justify-content: center;
+        gap: 5rem;
+        margin: 0;
+        padding: 2rem;
+        padding-bottom: 12rem;
+    }
+
+    /* -- mobile footer -- */
+
+    .footer-note {
+        padding-top: 0.2rem;
+    }
+}
+
+/* --- mobile menu --- */
+
+@media (max-width: 48rem) {
+
+    .main-nav {
+        display: none;
+    }
+
+    #main-header-title {
+        display: none;
+    }
+
+    #main-header {
+        height: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    #mobile-drawer {
+        display: block;
+    }
+
+    .mobile-nav {
+        display: flex;
+    }
+
+    .mobile-menu-icon {
+        width: 2rem;
+        color: white;
+        padding: 0.5rem;
+    }
+
+    #mobile-drawer {
+        width: 100%;
+        height: 8rem;
+        display: flex;
+        padding: 0.5rem;
+        padding-left: 0;
+        align-items: center;
+        justify-content:flex-end;
+        padding-top: 5rem;
+    }
+
+}

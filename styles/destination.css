@@ -1,0 +1,523 @@
+body {
+    background-color: rgba(26, 20, 37, 1);
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+
+}
+
+body h2 {
+    text-align: center;
+    color: #1A1425;
+}
+
+/*-- Hero section ----*/
+
+.hero {
+    min-height: 100vh;
+    background-image: url("https://d1mlmvg7rxfynq.cloudfront.net/map-travel-equipments.jpg");
+    background-size: cover;
+    color: white;
+    display: flex;
+    isolation: isolate;
+}
+
+.hero-text {
+    width: 45%;
+    padding: 2em;
+    padding-top: min(15vh, 10rem);
+    position: relative;
+}
+
+.hero-text::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #355f08;
+    mix-blend-mode: overlay;
+}
+
+.hero h1 {
+    /* text-transform: uppercase; */
+    font-size: clamp(3rem, 5vw + 0.5rem, 5rem);
+    line-height: 1.5;
+    margin: 0;
+    color: white;
+
+}
+
+/*-- pannel below hero section----*/
+
+.pannel-container {
+    display: flex;
+    background-color: #f6f6f3;
+    justify-content: space-around;
+    inset: 0;
+}
+
+.box {
+    display: inline-block;
+    color: black;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: 'Quicksand';
+    text-align: center;
+}
+
+.h2 {
+    font-size: 1rem;
+    color: #6f64aa;
+}
+
+.pannel-p {
+    color: #1a1425;
+    font-size: 1.3rem;
+}
+
+.line {
+    border-left: 1px solid #6f64aa;
+    height: 80px;
+    left: 50%;
+    margin-top: 3rem;
+}
+
+.h2:hover,
+.pannel-p:hover {
+    cursor: pointer;
+}
+
+
+/*--- body - favourite-destination cards----*/
+
+.favourite-destination {
+    /* background-color: white; */
+    padding-top: 5rem;
+    background-color: #1A1425;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+    /* background by SVGBackgrounds.com */
+}
+
+.favourite-destination h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 0;
+    color: white;
+}
+
+#container {
+    margin-top: 4rem;
+    /* margin-left: 0rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    box-sizing: border-box;
+    padding-bottom: 3rem;
+}
+
+
+.card-image {
+    position: relative;
+    width: 240px;
+    height: 325px;
+    border-radius: 36px;
+    overflow: hidden;
+}
+
+.card-image .card-bg {
+    width: 100%;
+    height: 100%;
+}
+
+.card-image .card-bg img {
+    width: 100%;
+    height: 100%;
+    transition: .2s ease-out;
+}
+
+.card-image:hover .card-bg img {
+    transform: scale(1.05);
+}
+
+.card-image .card-context {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+    font-family: 'Quicksand';
+    transform: translateY(68%);
+    transition: .2s ease-out;
+}
+
+.card-image:hover .card-context {
+    transform: translateY(0);
+}
+
+.card-image .card-context .dark-bg {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: scale(1.2);
+    background: linear-gradient(rgba(0, 0, 0, .4),
+            rgba(0, 0, 0, .9));
+    filter: blur(20px);
+    transition: .2s ease-out;
+}
+
+.card-image .card-context h2 {
+    position: absolute;
+    left: 32px;
+    color: #fff;
+}
+
+.card-image .card-context p {
+    position: absolute;
+    left: 32px;
+    top: 36px;
+    width: 82%;
+    line-height: 20px;
+    word-spacing: -2px;
+    color: #f9f9f9;
+    text-align: justify;
+    opacity: 0;
+    transition: .2s ease-out;
+}
+
+.card-image:hover .card-context p {
+    opacity: 1;
+}
+
+.card-image .card-context button {
+    cursor: pointer;
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    color: white;
+    background: #1a1425;
+    font-size: 0.5rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 12px;
+    transition: .4s;
+}
+
+.card-image .card-context button:hover {
+    background: #3c4f65;
+}
+
+.card-image .card-icons {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    opacity: 0;
+    transform: translateX(40px) scale(.5);
+    transform-origin: top;
+    transition: .2s ease-out;
+}
+
+.card:hover .card-icons {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card .card-icons li {
+    cursor: pointer;
+    color: white;
+    background: #1a1425;
+    font-size: 11px;
+    margin: 0 0 10px;
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 3px;
+    transition: .2s ease-out;
+    list-style: none;
+}
+
+.card-image .card-icons li:hover {
+    background: #3c4f65;
+    transform: translateX(-5px);
+}
+
+.card-image h2 {
+    font-size: 1.1rem;
+}
+
+.card-image p {
+    font-size: 0.7rem;
+}
+
+/*--- body - more stories----*/
+
+.more-stories {
+    background-color: white;
+    padding: 3rem;
+}
+
+.more-stories h2 {
+    color: #1A1425;
+}
+
+.card-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: 'Quicksand';
+}
+
+.card {
+    max-width: 300px;
+    margin: 15px;
+    background: #fff;
+    border: 1px solid #9a618a;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, .3);
+}
+
+.card img:hover {
+    opacity: 0.8;
+}
+
+.card-body {
+    color: #1A1425;
+    padding: 1rem;
+}
+
+.card-title {
+    color: #1A1425;
+    font-size: 1rem;
+}
+
+.card img {
+    position: relative;
+    text-align: center;
+    background: #6f64aa;
+    max-height: 22rem;
+    width: 100%;
+    border-bottom: 4px solid #9a618a;
+}
+
+.card-group .card .card img {
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    transition: 0.3s;
+    max-height: 180px;
+    width: 100%;
+    border-bottom: 4px solid #3c4f65;
+}
+
+.card-group .card .card img:before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    margin-left: -10px;
+    width: 0;
+    height: 0;
+    border-top: solid 10px #3c4f65;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+}
+
+/*--- body - hovering effect ----*/
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color: #1A1425;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*--- body - Guides ----*/
+
+.guides {
+    padding: 2rem;
+    background-color: white;
+}
+
+.guides h2 {
+    color: #1A1425;
+    padding-bottom: 1rem;
+}
+
+.guide-container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: [col] auto [col] auto [col] auto [col] auto;
+    grid-template-rows: [row] auto [row] auto [row] auto [row] auto [row] auto [row];
+    background-color: #fff;
+    color: #444;
+    overflow: hidden;
+    position: relative;
+}
+
+.country-box {
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    padding: 40px;
+    font-size: 150%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+
+}
+
+.country-box:hover {
+    box-shadow: 4px 2px 2px #cfd0d2;
+    cursor: pointer;
+    transform: scale(1.01);
+}
+
+.Greece {
+    grid-column: col / span 5;
+    grid-row: 1 / 3;
+    background-image: url("https://d1mlmvg7rxfynq.cloudfront.net/guide/Parthenon,%20Athens,%20Greece.jpg");
+
+
+}
+
+.Croatia {
+    grid-column: col 5 / span 2;
+    grid-row: 1;
+    background-image: url("https://d1mlmvg7rxfynq.cloudfront.net/guide/Walls%20of%20Dubrovnik,%20Dubrovnik,%20Croatia.jpg");
+
+}
+
+.Turkey {
+    grid-column: col 5 / span 2;
+    grid-row: 2 / 3;
+    background-image: url("https://d1mlmvg7rxfynq.cloudfront.net/guide/%C4%B0stanbul,%20Turkey.jpg");
+    padding-bottom: 6rem;
+}
+
+.Egypt {
+    grid-column: col 3/ span 5;
+    grid-row: 3/ 5;
+    background-image: url("https://d1mlmvg7rxfynq.cloudfront.net/guide/Pyramids%20Gardens,%20Al%20Haram,%20Egypt.jpg");
+    padding-bottom: 15rem;
+}
+
+.Indonesia {
+    grid-column: col 1/ span 2;
+    grid-row: 3 / 5;
+    background-image: url("https://d1mlmvg7rxfynq.cloudfront.net/guide/Bali,%20Indonesia.jpg");
+}
+
+.country-box img {
+    overflow: hidden;
+    width: 300px;
+}
+
+/* --- mobile hero section --- */
+
+@media (max-width: 48rem) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding-top: 0;
+    }
+
+    .mobile-remove {
+        display: none;
+    }
+
+    /* --- mobile pannel below hero section --- */
+    .pannel-container {
+        display: block;
+    }
+
+    .box {
+        display: flex;
+        padding-top: 0.6rem;
+        padding-bottom: 0;
+        text-align: start;
+        box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    }
+
+    .pannel-p {
+        font-size: 1.2rem;
+    }
+
+    .line {
+        border-left: 0;
+        border-bottom: 1px ridge #6f64aa;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    /* --- mobile - favourite-destination cards----*/
+
+    .mobile-remove {
+        display: none;
+    }
+
+    .favourite-destination {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+
+
+    /* --- mobile - more stories----*/
+
+    .card-group {
+        display: block;
+    }
+
+    .card {
+        max-width: 400px;
+      
+    }
+
+
+    /* --- guide - more stories----*/
+
+    .guide-container {
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .country-box {
+        background-color: #444;
+        color: #fff;
+        border-radius: 15px;
+        padding-top: 0;
+        width: 75%;
+        padding-bottom: 10rem;
+    }
+
+}
